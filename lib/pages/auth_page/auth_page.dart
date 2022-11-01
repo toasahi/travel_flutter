@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:gacha_travel/components/_components.dart';
 
 class AuthPage extends StatelessWidget {
@@ -7,14 +8,14 @@ class AuthPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: Column(
-        children: const [
-          GachaTravelAppBar(
-            title: "ログイン",
-          ),
-        ],
+      body: SafeArea(
+        top: false,
+        child: Column(
+          children: const [
+            GachaTravelAppBar(title: "ログイン"),
+          ],
+        ),
       ),
-    ));
+    );
   }
 }
