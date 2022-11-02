@@ -15,4 +15,9 @@ class AppColors {
   static const Color subButtonBgColor = Color(0xFF20BDBD);
   static const Color subButtonTextColor = Color(0xFFFFFFFF);
   static const Color subButtonStrokeColor = Color(0xFF1BA0A0);
+
+  static const Color bottomNavigatorBgColor = Color(0xFFFFFFFF);
+  static const Color bottomNavigatorSelectedColor = Color(0xFFF13C31);
+  static const Color bottomNavigatorShadowColor = Color(0xFFAEAEAE);
+
 }
