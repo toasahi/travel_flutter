@@ -19,5 +19,5 @@ class AppColors {
   static const Color bottomNavigatorBgColor = Color(0xFFFFFFFF);
   static const Color bottomNavigatorSelectedColor = Color(0xFFF13C31);
   static const Color bottomNavigatorShadowColor = Color(0xFFAEAEAE);
-
+  static const Color bottomNavigatorTextColor = Color(0xFFC3C7C6);
 }
