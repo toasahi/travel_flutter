@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:gacha_travel/constants/constants.dart';
+import 'package:gacha_travel/constants/colors.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

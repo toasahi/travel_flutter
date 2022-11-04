@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:gacha_travel/pages/index_page.dart';
-import 'package:gacha_travel/constants/constants.dart';
+import 'package:gacha_travel/constants/colors.dart';
 
 class GachaTravelAppBar extends StatelessWidget {
   const GachaTravelAppBar({Key? key, required this.title}) : super(key: key);
