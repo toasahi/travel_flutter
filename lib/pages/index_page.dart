@@ -58,7 +58,7 @@ class IndexPage extends StatelessWidget {
                           ),
                         ),
                         child: SvgPicture.asset(
-                          'assets/svg_images/Button1.svg',
+                          'assets/svg_images/Button2.svg',
                           width: 328.w,
                           height: 80.h,
                         ),
