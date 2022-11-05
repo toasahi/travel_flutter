@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:gacha_travel/components/_components.dart';
+import 'package:gacha_travel/importer.dart';
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
