@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:gacha_travel/pages/gacha_home_page.dart';
+import 'package:gacha_travel/importer.dart';
 
 class IndexPage extends StatelessWidget {
   const IndexPage({super.key});
@@ -19,9 +20,9 @@ class IndexPage extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Color(0xFFDDEEF2),
-                  Color(0xFFADE1E9),
-                  Color(0xFF77DEEC),
+                  AppColors.gradationBgColor1,
+                  AppColors.gradationBgColor2,
+                  AppColors.gradationBgColor3,
                 ],
                 stops: [
                   0.0001,

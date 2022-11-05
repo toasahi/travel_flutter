@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:gacha_travel/importer.dart';
-import 'package:gacha_travel/pages/index_page.dart';
 
 class GachaHomePage extends StatelessWidget {
   const GachaHomePage({super.key});
@@ -20,9 +19,9 @@ class GachaHomePage extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Color(0xFFDDEEF2),
-                  Color(0xFFADE1E9),
-                  Color(0xFF77DEEC),
+                  AppColors.gradationBgColor1,
+                  AppColors.gradationBgColor2,
+                  AppColors.gradationBgColor3,
                 ],
                 stops: [
                   0.0001,
@@ -65,95 +64,7 @@ class GachaHomePage extends StatelessWidget {
                     ),
                   ],
                 ),
-                Container(
-                  decoration: const BoxDecoration(
-                    color: AppColors.bottomNavigatorBgColor,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(37),
-                      topRight: Radius.circular(37),
-                    ),
-                  ),
-                  width: double.infinity,
-                  height: 80.h,
-                  child: Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 48, vertical: 8),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        GestureDetector(
-                          onTap: () => Navigator.push(
-                            context,
-                            CustomPageRoute(const IndexPage()),
-                          ),
-                          child: Column(
-                            children: [
-                              SvgPicture.asset(
-                                'assets/svg_images/bottomGacha.svg',
-                                width: 34.w,
-                                height: 34.h,
-                              ),
-                              Text(
-                                "ガチャ",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 9.sp,
-                                  color: AppColors.bottomNavigatorSelectedColor,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () => Navigator.push(
-                            context,
-                            CustomPageRoute(const IndexPage()),
-                          ),
-                          child: Column(
-                            children: [
-                              SvgPicture.asset(
-                                'assets/svg_images/bottomCollection.svg',
-                                width: 34.w,
-                                height: 34.h,
-                              ),
-                              Text(
-                                "コレクション",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 9.sp,
-                                  color: AppColors.bottomNavigatorTextColor,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () => Navigator.push(
-                            context,
-                            CustomPageRoute(const IndexPage()),
-                          ),
-                          child: Column(
-                            children: [
-                              SvgPicture.asset(
-                                'assets/svg_images/bottomMypage.svg',
-                                width: 34.w,
-                                height: 34.h,
-                              ),
-                              Text(
-                                "マイページ",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 9.sp,
-                                  color: AppColors.bottomNavigatorTextColor,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                const GachaTravelBottomNav(label: "gacha"),
               ],
             ),
           ),
@@ -161,37 +72,4 @@ class GachaHomePage extends StatelessWidget {
       ),
     );
   }
-}
-
-class CustomPageRoute<T> extends PageRoute<T> {
-  CustomPageRoute(this.child);
-
-  @override
-  Color get barrierColor => Colors.white;
-
-  @override
-  String? get barrierLabel => null;
-
-  final Widget child;
-
-  @override
-  Widget buildPage(
-    BuildContext context,
-    Animation<double> animation,
-    Animation<double> secondaryAnimation,
-  ) {
-    // ここを変えればいろんなトランジションにできるぞ
-    return FadeTransition(
-      opacity: animation,
-      child: child,
-    );
-  }
-
-  @override
-  bool get maintainState => true;
-
-  @override
-  Duration get transitionDuration => const Duration(
-        seconds: 0, // 変化にかかる時間を指定
-      );
 }
