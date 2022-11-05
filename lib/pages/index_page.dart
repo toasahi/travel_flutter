@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
 import 'package:gacha_travel/pages/gacha_home_page.dart';
 
 class IndexPage extends StatelessWidget {
