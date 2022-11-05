@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
 import 'package:gacha_travel/pages/gacha_home_page.dart';
 
 class IndexPage extends StatelessWidget {
@@ -32,6 +34,7 @@ class IndexPage extends StatelessWidget {
             height: double.infinity,
             child: SvgPicture.asset(
               'assets/svg_images/indexBg.svg',
+              fit: BoxFit.fill,
             ),
           ),
           Center(
@@ -49,17 +52,17 @@ class IndexPage extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 24.w),
                     child: SizedBox(
-                      width: double.infinity,
                       child: GestureDetector(
-                        onTap: () => {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const GachaHomePage())
-                          )
-                        },
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const GachaHomePage(),
+                          ),
+                        ),
                         child: SvgPicture.asset(
-                          'assets/svg_images/button.svg',
-                          fit: BoxFit.scaleDown,
+                          'assets/svg_images/Button2.svg',
+                          width: 328.w,
+                          height: 80.h,
                         ),
                       ),
                     ),
