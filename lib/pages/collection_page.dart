@@ -11,31 +11,67 @@ class CollectionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        bottom: false,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/collectionBg.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
               children: [
-                SizedBox(height: 8.h),
-                Row(
-                  children: [
-                    SizedBox(width: 72.w),
-                    SvgPicture.asset(
-                      'assets/svg_images/appName.svg',
-                    ),
-                    SizedBox(width: 24.w),
-                    SizedBox(
-                      width: 28.w,
-                      height: 28.h,
-                      child: const Icon(
-                        Icons.settings,
-                      ),
-                    ),
-                    SizedBox(width: 16.w),
-                  ],
+                SvgPicture.asset(
+                  'assets/svg_images/collectionHeader.svg',
+                  fit: BoxFit.fill,
                 ),
+                SizedBox(height: 16.h),
+                Container(
+                  decoration:  BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color(0xFF1BA0A0),
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: SvgPicture.asset(
+                    'assets/svg_images/collectionButton.svg',
+                  ),
+                ),
+                Container(
+                  height: 552.h,
+                  width: 375.w,
+                  child: ListView(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    children: [
+                      SizedBox(height: 24.h),
+                      SvgPicture.asset(
+                        'assets/svg_images/collectionFrame.svg',
+                        fit: BoxFit.fill,
+                      ),
+                      const SizedBox(height: 16),
+                      SvgPicture.asset(
+                        'assets/svg_images/collectionFrame.svg',
+                        fit: BoxFit.fill,
+                      ),
+                      const SizedBox(height: 16),
+                      SvgPicture.asset(
+                        'assets/svg_images/collectionFrame.svg',
+                        fit: BoxFit.fill,
+                      ),
+                      const SizedBox(height: 16),
+                      SvgPicture.asset(
+                        'assets/svg_images/collectionFrame.svg',
+                        fit: BoxFit.fill,
+                      ),
+                      const SizedBox(height: 16),
+                    ],
+                  ),
+                )
               ],
             ),
             const GachaTravelBottomNav(label: "collection"),
