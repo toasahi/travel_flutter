@@ -25,4 +25,5 @@ class AppColors {
   static const Color gradationBgColor2 = Color(0xFFADE1E9);
   static const Color gradationBgColor3 = Color(0xFF77DEEC);
 
+  static const Color collectionButtonShadowColor = Color(0xFF1BA0A0);
 }

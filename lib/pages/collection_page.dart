@@ -23,52 +23,63 @@ class CollectionPage extends StatelessWidget {
           children: [
             Column(
               children: [
-                SvgPicture.asset(
-                  'assets/svg_images/collectionHeader.svg',
-                  fit: BoxFit.fill,
+                SizedBox(
+                  width: 375.w,
+                  height: 120.h,
+                  child: SvgPicture.asset(
+                    'assets/svg_images/collectionHeader.svg',
+                    fit: BoxFit.fill,
+                  ),
                 ),
                 SizedBox(height: 16.h),
                 Container(
-                  decoration:  BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.r),
                     boxShadow: const [
                       BoxShadow(
-                        color: Color(0xFF1BA0A0),
+                        color: AppColors.collectionButtonShadowColor,
                         offset: Offset(0, 2),
                       ),
                     ],
                   ),
                   child: SvgPicture.asset(
                     'assets/svg_images/collectionButton.svg',
+                    height: 40.h,
+                    width: 240.w,
+                    fit: BoxFit.scaleDown,
                   ),
                 ),
-                Container(
-                  height: 552.h,
+                SizedBox(
+                  height: 554.h,
                   width: 375.w,
                   child: ListView(
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    padding: EdgeInsets.symmetric(horizontal: 8.w),
                     children: [
                       SizedBox(height: 24.h),
                       SvgPicture.asset(
                         'assets/svg_images/collectionFrame.svg',
-                        fit: BoxFit.fill,
+                        height: 152.h,
+                        fit: BoxFit.scaleDown,
                       ),
-                      const SizedBox(height: 16),
+                      SizedBox(height: 16.h),
                       SvgPicture.asset(
                         'assets/svg_images/collectionFrame.svg',
-                        fit: BoxFit.fill,
+                        height: 152.h,
+                        fit: BoxFit.scaleDown,
                       ),
-                      const SizedBox(height: 16),
+                      SizedBox(height: 16.h),
                       SvgPicture.asset(
                         'assets/svg_images/collectionFrame.svg',
-                        fit: BoxFit.fill,
+                        height: 152.h,
+                        fit: BoxFit.scaleDown,
                       ),
-                      const SizedBox(height: 16),
+                      SizedBox(height: 16.h),
                       SvgPicture.asset(
                         'assets/svg_images/collectionFrame.svg',
-                        fit: BoxFit.fill,
+                        height: 152.h,
+                        fit: BoxFit.scaleDown,
                       ),
-                      const SizedBox(height: 16),
+                      SizedBox(height: 16.h),
                     ],
                   ),
                 )
