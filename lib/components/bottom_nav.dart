@@ -16,17 +16,17 @@ class GachaTravelBottomNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: AppColors.bottomNavigatorBgColor,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(37),
-          topRight: Radius.circular(37),
+          topLeft: Radius.circular(37.r),
+          topRight: Radius.circular(37.r),
         ),
       ),
       width: double.infinity,
       height: 80.h,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 8),
+        padding: EdgeInsets.symmetric(horizontal: 48.w, vertical: 8.h),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -43,6 +43,7 @@ class GachaTravelBottomNav extends StatelessWidget {
                         : 'assets/svg_images/bottomGacha.svg',
                     width: 34.w,
                     height: 34.h,
+                    fit: BoxFit.scaleDown,
                   ),
                   Text(
                     "ガチャ",
@@ -70,6 +71,7 @@ class GachaTravelBottomNav extends StatelessWidget {
                         : 'assets/svg_images/bottomCollection.svg',
                     width: 34.w,
                     height: 34.h,
+                    fit: BoxFit.scaleDown,
                   ),
                   Text(
                     "コレクション",
@@ -97,6 +99,7 @@ class GachaTravelBottomNav extends StatelessWidget {
                         : 'assets/svg_images/bottomMypage.svg',
                     width: 34.w,
                     height: 34.h,
+                    fit: BoxFit.scaleDown,
                   ),
                   Text(
                     "マイページ",

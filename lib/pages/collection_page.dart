@@ -56,10 +56,14 @@ class CollectionPage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 8.w),
                     children: [
                       SizedBox(height: 24.h),
-                      SvgPicture.asset(
-                        'assets/svg_images/collectionFrame.svg',
-                        height: 152.h,
-                        fit: BoxFit.scaleDown,
+                      Stack(
+                        children: [
+                          SvgPicture.asset(
+                            'assets/svg_images/collectionFrame.svg',
+                            height: 152.h,
+                            fit: BoxFit.scaleDown,
+                          ),
+                        ],
                       ),
                       SizedBox(height: 16.h),
                       SvgPicture.asset(
