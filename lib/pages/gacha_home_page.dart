@@ -32,9 +32,7 @@ class GachaHomePage extends StatelessWidget {
             ),
             child: SvgPicture.asset(
               'assets/svg_images/gachaHome.svg',
-              height: double.infinity,
-              width: double.infinity,
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
             ),
           ),
           SafeArea(
