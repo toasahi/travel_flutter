@@ -17,6 +17,21 @@ dependencies:
   flutter_native_splash: ^2.2.11
   flutter_svg: ^1.1.5
 
+# スプラッシュ設定
+# 以下のコマンドで実行
+# flutter pub run flutter_native_splash:create
+flutter_native_splash:
+  color: '#FF654A'
+  image: 'assets/images/splash.png'
+  color_dark: '#FF654A'
+  image_dark: 'assets/images/splash.png'
+  fullscreen: false
+  android_12:
+    icon_background_color: '#FF654A'
+    image: 'assets/images/splash.png'
+    icon_background_color_dark: '#FF654A'
+    image_dark: 'assets/images/splash.png'
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
