@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:page_transition/page_transition.dart';
 
 import 'package:gacha_travel/importer.dart';
 import 'package:gacha_travel/pages/collection_page.dart';
@@ -33,7 +34,11 @@ class GachaTravelBottomNav extends StatelessWidget {
             GestureDetector(
               onTap: () => Navigator.push(
                 context,
-                CustomPageRoute(const GachaHomePage()),
+                PageTransition(
+                  type: PageTransitionType.fade,
+                  child: const GachaHomePage(),
+                  duration: const Duration(milliseconds: 0),
+                ),
               ),
               child: Column(
                 children: [
@@ -61,7 +66,11 @@ class GachaTravelBottomNav extends StatelessWidget {
             GestureDetector(
               onTap: () => Navigator.push(
                 context,
-                CustomPageRoute(const CollectionPage()),
+                PageTransition(
+                  type: PageTransitionType.fade,
+                  child: const CollectionPage(),
+                  duration: const Duration(milliseconds: 0),
+                ),
               ),
               child: Column(
                 children: [
@@ -89,7 +98,11 @@ class GachaTravelBottomNav extends StatelessWidget {
             GestureDetector(
               onTap: () => Navigator.push(
                 context,
-                CustomPageRoute(const MypagePage()),
+                  PageTransition(
+                    type: PageTransitionType.fade,
+                    child: const MypagePage(),
+                    duration: const Duration(milliseconds: 0),
+                  ),
               ),
               child: Column(
                 children: [
@@ -119,37 +132,4 @@ class GachaTravelBottomNav extends StatelessWidget {
       ),
     );
   }
-}
-
-class CustomPageRoute<T> extends PageRoute<T> {
-  CustomPageRoute(this.child);
-
-  @override
-  Color get barrierColor => Colors.white;
-
-  @override
-  String? get barrierLabel => null;
-
-  final Widget child;
-
-  @override
-  Widget buildPage(
-    BuildContext context,
-    Animation<double> animation,
-    Animation<double> secondaryAnimation,
-  ) {
-    // ここを変えればいろんなトランジションにできるぞ
-    return FadeTransition(
-      opacity: animation,
-      child: child,
-    );
-  }
-
-  @override
-  bool get maintainState => true;
-
-  @override
-  Duration get transitionDuration => const Duration(
-        seconds: 0, // 変化にかかる時間を指定
-      );
 }
