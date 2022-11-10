@@ -42,7 +42,9 @@ class _GachaDetailPage extends State<GachaDetailPage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           GachaTravelTextField(
-                              text: _selectedItem, label: "人数"),
+                            text: _selectedItem,
+                            label: "人数",
+                          ),
                           const GachaTravelTextField(text: "1日", label: "宿泊日数"),
                           const GachaTravelTextField(text: "夏", label: "旅行名"),
                         ],
@@ -84,23 +86,25 @@ class _GachaDetailPage extends State<GachaDetailPage> {
                               ),
                               RichText(
                                 text: TextSpan(
-                                    style: TextStyle(
-                                      color: AppColors.inputTextColor,
-                                      letterSpacing: 1.2,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 24.sp,
+                                  style: TextStyle(
+                                    color: AppColors.inputTextColor,
+                                    letterSpacing: 1.2,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 24.sp,
+                                  ),
+                                  children: [
+                                    TextSpan(
+                                      text: totalMoney(people: _selectedItem),
                                     ),
-                                    children: [
-                                      TextSpan(
-                                          text: totalMoney(
-                                              people: _selectedItem)),
-                                      TextSpan(
-                                          text: "円",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 12.sp,
-                                          )),
-                                    ]),
+                                    TextSpan(
+                                      text: "円",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12.sp,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ],
                           ),
@@ -136,7 +140,7 @@ class _GachaDetailPage extends State<GachaDetailPage> {
   }
 
   String totalMoney({required String people}) {
-    final formatter = NumberFormat("#,###¥");
+    final formatter = NumberFormat("#,###");
     return (formatter.format(int.parse(people[0]) * 5000)).toString();
   }
 
@@ -188,6 +192,9 @@ class _GachaDetailPage extends State<GachaDetailPage> {
                   child: CupertinoPicker(
                     itemExtent: 40.h,
                     onSelectedItemChanged: _onSelectedItemChanged,
+                    scrollController: FixedExtentScrollController(
+                      initialItem: _selectedIndex,
+                    ),
                     children: _items.map(_pickerItem).toList(),
                   ),
                 ),
@@ -207,6 +214,7 @@ class _GachaDetailPage extends State<GachaDetailPage> {
   }
 
   String _selectedItem = '1人';
+  int _selectedIndex = 0;
 
   final List<String> _items = [
     '1人',
@@ -218,6 +226,7 @@ class _GachaDetailPage extends State<GachaDetailPage> {
   void _onSelectedItemChanged(int index) {
     setState(() {
       _selectedItem = _items[index];
+      _selectedIndex = index;
     });
   }
 }

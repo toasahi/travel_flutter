@@ -27,24 +27,26 @@ class GachaTravelTextField extends StatelessWidget {
           ),
         ),
         SizedBox(height: 8.h),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              text,
-              style: TextStyle(
-                color: AppColors.inputTextColor,
-                fontWeight: FontWeight.w500,
-                fontSize: 16.sp,
+        GestureDetector(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                text,
+                style: TextStyle(
+                  color: AppColors.inputTextColor,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16.sp,
+                ),
               ),
-            ),
-            SvgPicture.asset(
-              'assets/svg_images/textfield_arrow.svg',
-              height: 12.h,
-              width: 12.w,
-              fit: BoxFit.scaleDown,
-            )
-          ],
+              SvgPicture.asset(
+                'assets/svg_images/textfield_arrow.svg',
+                height: 12.h,
+                width: 12.w,
+                fit: BoxFit.scaleDown,
+              )
+            ],
+          ),
         ),
         Divider(
           color: AppColors.lineColor,
