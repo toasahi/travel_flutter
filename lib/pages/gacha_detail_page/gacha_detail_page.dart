@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:gacha_travel/importer.dart';
 import 'package:gacha_travel/pages/gacha_home_page.dart';
+import 'package:intl/intl.dart';
 
 class GachaDetailPage extends StatefulWidget {
   const GachaDetailPage({super.key});
@@ -39,8 +40,9 @@ class _GachaDetailPage extends State<GachaDetailPage> {
                       padding: EdgeInsets.fromLTRB(24.w, 24.h, 40.w, 0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children:  [
-                          GachaTravelTextField(text: _selectedItem, label: "人数"),
+                        children: [
+                          GachaTravelTextField(
+                              text: _selectedItem, label: "人数"),
                           const GachaTravelTextField(text: "1日", label: "宿泊日数"),
                           const GachaTravelTextField(text: "夏", label: "旅行名"),
                         ],
@@ -89,7 +91,9 @@ class _GachaDetailPage extends State<GachaDetailPage> {
                                       fontSize: 24.sp,
                                     ),
                                     children: [
-                                      const TextSpan(text: "5,000"),
+                                      TextSpan(
+                                          text: totalMoney(
+                                              people: _selectedItem)),
                                       TextSpan(
                                           text: "円",
                                           style: TextStyle(
@@ -129,6 +133,11 @@ class _GachaDetailPage extends State<GachaDetailPage> {
         ),
       ),
     );
+  }
+
+  String totalMoney({required String people}) {
+    final formatter = NumberFormat("#,###¥");
+    return (formatter.format(int.parse(people[0]) * 5000)).toString();
   }
 
   void _showModalPicker(BuildContext context) {
