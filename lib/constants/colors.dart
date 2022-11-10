@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color bgColor = Color(0xFFF5F5F5);
+  static const Color bgColor = Color(0xFFF1F2EB);
+  static const Color authBgColor = Color(0xFFF5F5F5);
 
   static const Color appBarBGColor = Color(0xFFFF654A);
   static const Color appBarShadowColor = Color(0xFFCB472F);
@@ -26,4 +27,11 @@ class AppColors {
   static const Color gradationBgColor3 = Color(0xFF77DEEC);
 
   static const Color collectionButtonShadowColor = Color(0xFF1BA0A0);
+
+  static const Color cancelTextColor = Color(0xFF535353);
+  static const Color decisionTextColor = Color(0xFFFF654A);
+
+  static const Color labelTextColor = Color(0xFF777777);
+  static const Color lineColor = Color(0xFFEDEDED);
+  static const Color inputTextColor = Color(0xFF777777);
 }
