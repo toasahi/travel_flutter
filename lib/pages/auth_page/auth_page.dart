@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:gacha_travel/importer.dart';
+import 'package:gacha_travel/pages/index_page.dart';
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
@@ -12,7 +13,7 @@ class AuthPage extends StatelessWidget {
         top: false,
         child: Column(
           children: const [
-            GachaTravelAppBar(title: "ログイン"),
+            GachaTravelAppBar(title: "ログイン",page: IndexPage(),),
           ],
         ),
       ),
