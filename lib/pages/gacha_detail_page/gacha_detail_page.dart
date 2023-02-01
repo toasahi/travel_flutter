@@ -2,10 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
+import 'package:page_transition/page_transition.dart';
 
 import 'package:gacha_travel/importer.dart';
 import 'package:gacha_travel/pages/gacha_home_page.dart';
-import 'package:intl/intl.dart';
+import 'package:gacha_travel/pages/gacha_page.dart';
 
 class GachaDetailPage extends StatefulWidget {
   const GachaDetailPage({super.key});
@@ -118,7 +120,14 @@ class _GachaDetailPage extends State<GachaDetailPage> {
                   ),
                   SizedBox(height: 56.h),
                   ElevatedButton(
-                    onPressed: () => _showModalPicker(context),
+                    onPressed: () => Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        isIos: true,
+                        child: const GachaPage(),
+                      ),
+                    ),
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(336.w, 80.h),
                       backgroundColor: AppColors.mainButtonBgColor,
