@@ -2,10 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
 import 'package:page_transition/page_transition.dart';
 
 import 'package:gacha_travel/importer.dart';
+
 import 'package:gacha_travel/pages/gacha_home_page.dart';
 import 'package:gacha_travel/pages/gacha_page.dart';
 
@@ -119,8 +121,8 @@ class _GachaDetailPage extends State<GachaDetailPage> {
                     ),
                   ),
                   SizedBox(height: 56.h),
-                  ElevatedButton(
-                    onPressed: () => Navigator.push(
+                  GestureDetector(
+                    onTap: () => Navigator.push(
                       context,
                       PageTransition(
                         type: PageTransitionType.fade,
@@ -128,15 +130,11 @@ class _GachaDetailPage extends State<GachaDetailPage> {
                         child: const GachaPage(),
                       ),
                     ),
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: Size(336.w, 80.h),
-                      backgroundColor: AppColors.mainButtonBgColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(32.r)),
-                      ),
-                    ),
-                    child: const Text(
-                      "ガチャを回す",
+                    child: SvgPicture.asset(
+                      'assets/svg_images/gacha_button.svg',
+                      width: 328.w,
+                      height: 80.h,
+                      fit: BoxFit.scaleDown,
                     ),
                   ),
                 ],

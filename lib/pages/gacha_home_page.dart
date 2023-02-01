@@ -66,18 +66,28 @@ class GachaHomePage extends StatelessWidget {
                     ),
                   ],
                 ),
-                ElevatedButton(
-                  onPressed: () => Navigator.push(
-                    context,
-                    PageTransition(
-                      type: PageTransitionType.fade,
-                      isIos: true,
-                      child: const GachaDetailPage(),
+                Column(
+                  children: [
+                    GestureDetector(
+                      onTap: () => Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.fade,
+                          isIos: true,
+                          child: const GachaDetailPage(),
+                        ),
+                      ),
+                      child: SvgPicture.asset(
+                        'assets/svg_images/gacha_button.svg',
+                        width: 328.w,
+                        height: 80.h,
+                        fit: BoxFit.scaleDown,
+                      ),
                     ),
-                  ),
-                  child: const Text("ガチャを回す"),
+                    SizedBox(height: 24.h),
+                    const GachaTravelBottomNav(label: "gacha"),
+                  ],
                 ),
-                const GachaTravelBottomNav(label: "gacha"),
               ],
             ),
           ),
